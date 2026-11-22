@@ -1,0 +1,301 @@
+
+/* ================================= */
+/* NBA HERO */
+/* ================================= */
+
+.nba-hero {
+    min-height: 650px;
+    padding: 100px 8%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: var(--nba-hero-bg);
+
+    color: var(--nba-hero-text);
+}
+
+.nba-hero-content {
+    max-width: 800px;
+}
+
+.nba-hero-label {
+    color: #ff6b00;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.nba-hero h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(60px, 9vw, 105px);
+    line-height: 0.95;
+    margin-bottom: 25px;
+}
+
+.nba-hero-description {
+    max-width: 550px;
+    color: var(--text-secondary);
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.nba-hero .button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #ff6b00;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.nba-hero .button:hover {
+    background: #e65f00;
+    transform: translateY(-4px);
+}
+
+/* NBA information */
+
+.nba-hero-info {
+    display: flex;
+    gap: 40px;
+    margin-top: 65px;
+    flex-wrap: wrap;
+}
+
+.nba-hero-info span {
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* NBA game schedule */
+
+.games-filter {
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.games-filter label {
+    display: grid;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.games-filter input {
+    min-height: 48px;
+    padding: 0 12px;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font: inherit;
+}
+
+.games-filter input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.games-filter button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+.games-feedback {
+    min-height: 1.8em;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+}
+
+.nba-games-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.nba-game-card {
+    min-width: 0;
+    padding: 22px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.nba-game-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+}
+
+.nba-game-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 22px;
+    color: var(--text-secondary);
+    font-size: 0.76rem;
+}
+
+.nba-game-status {
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nba-game-status.is-live {
+    color: #ef4444;
+}
+
+.nba-game-status.is-final {
+    color: var(--text-secondary);
+}
+
+.nba-game-matchup {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+}
+
+.nba-game-team {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.nba-game-team span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nba-game-team.is-home {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.nba-game-team img {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    object-fit: contain;
+}
+
+.nba-game-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-width: 78px;
+    text-align: center;
+}
+
+.nba-game-score {
+    color: var(--text-primary);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.nba-game-score-separator {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.nba-game-tipoff {
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.games-state {
+    grid-column: 1 / -1;
+    padding: 26px;
+    color: var(--text-secondary);
+    text-align: center;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .nba-games-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .games-filter {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+    }
+
+    .games-filter label {
+        min-width: 0;
+    }
+
+    .games-filter input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .games-filter button {
+        width: 100%;
+        padding-inline: 12px;
+        font-size: 0.72rem;
+    }
+
+    .nba-game-card {
+        padding: 16px 12px;
+    }
+
+    .nba-game-matchup {
+        gap: 6px;
+    }
+
+    .nba-game-team {
+        flex-direction: column;
+        gap: 6px;
+        font-size: 0.76rem;
+        text-align: center;
+    }
+
+    .nba-game-team.is-home {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .nba-game-team img {
+        width: 34px;
+        height: 34px;
+        flex-basis: 34px;
+    }
+
+    .nba-game-center {
+        min-width: 68px;
+    }
+
+    .nba-game-score {
+        font-size: 1.7rem;
+    }
+}

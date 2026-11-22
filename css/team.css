@@ -1,0 +1,239 @@
+
+.team-page {
+    --team-bg: var(--bg-primary);
+    --team-card: var(--bg-secondary);
+    --team-text: var(--text-primary);
+    --team-muted: var(--text-secondary);
+    --team-border: var(--border);
+    --team-accent: var(--accent);
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+    color: var(--team-text);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 35px;
+    color: var(--team-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--team-accent);
+}
+
+.team-hero {
+    background: var(--team-card);
+    border: 1px solid var(--team-border);
+    border-radius: 18px;
+    padding: 45px;
+    margin-bottom: 55px;
+}
+
+.team-hero-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.team-hero-logo {
+    width: 190px;
+    height: 190px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-hero-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.team-tag {
+    display: inline-block;
+    color: var(--team-accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.team-hero-text h1 {
+    font-size: clamp(30px, 5vw, 52px);
+    margin: 0 0 12px;
+}
+
+.team-subtitle {
+    color: var(--team-muted);
+    font-size: 16px;
+}
+
+.team-description {
+    color: var(--team-muted);
+    line-height: 1.7;
+    max-width: 550px;
+    margin-top: 22px;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.section-label {
+    color: var(--team-accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 28px;
+    margin-top: 8px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.detail-card {
+    background: var(--team-card);
+    border: 1px solid var(--team-border);
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.detail-label {
+    display: block;
+    color: var(--team-muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+}
+
+.detail-card h3 {
+    font-size: 19px;
+    margin: 0;
+}
+
+.team-loading,
+.team-error {
+    color: var(--team-muted);
+    padding: 35px 0;
+}
+
+@media (max-width: 750px) {
+    .team-hero {
+        padding: 28px;
+    }
+
+    .team-hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .team-hero-logo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .details-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    .team-page {
+        padding: 25px 15px 50px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.roster-section {
+    margin-top: 60px;
+}
+
+.roster-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.player-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px;
+    background: var(--team-card);
+    border: 1px solid var(--team-border);
+    border-radius: 14px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.player-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--team-accent);
+}
+
+.player-avatar {
+    width: 68px;
+    height: 68px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--team-accent);
+    color: white;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.player-card-info h3 {
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+.player-card-info p {
+    color: var(--team-muted);
+    margin: 5px 0;
+}
+
+.player-number {
+    color: var(--team-accent);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.player-height {
+    color: var(--team-muted);
+    font-size: 12px;
+}
+
+.roster-error {
+    color: var(--team-muted);
+}
+
+@media (max-width: 850px) {
+    .roster-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .roster-grid {
+        grid-template-columns: 1fr;
+    }
+}

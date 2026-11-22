@@ -1,0 +1,774 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="COURTSIDE - Basketball training, NBA scores, news and basketball culture.">
+
+    <meta name="author" content="COURTSIDE">
+
+    <title>COURTSIDE — Basketball Training</title>
+    <!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="css/style.css?v=4">
+<link rel="stylesheet" href="css/responsive.css">
+<!-- Home CSS -->
+<link rel="stylesheet" href="css/home.css">
+
+<!-- Main JS -->
+<script src="js/main.js?v=3" defer></script>
+
+</head>
+
+<body data-theme="dark">
+
+    <!-- ================================= -->
+    <!-- HEADER / NAVIGATION -->
+    <!-- ================================= -->
+
+    <header class="header">
+
+        <div class="container header-container">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                COURTSIDE<span>.</span>
+            </a>
+
+            <!-- Main navigation -->
+            <nav class="navigation" aria-label="Main navigation">
+
+                <ul class="nav-list">
+
+                    <li>
+                        <a href="index.html" aria-current="page">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <details class="nav-dropdown">
+                            <summary>NBA</summary>
+
+                            <ul>
+                                <li>
+                                    <a href="pages/nba.html">
+                                        NBA Overview
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="pages/nba.html#scores">
+                                        Scores
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="pages/nba.html#standings">
+                                        Standings
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="pages/nba.html#schedule">
+                                        Schedule
+                                    </a>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li>
+                        <details class="nav-dropdown">
+                            <summary>Training</summary>
+
+                            <ul>
+                                <li>
+                                    <a href="pages/training.html">
+                                        All Training
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="pages/training.html#shooting">
+                                        Shooting
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="pages/training.html#dribbling">
+                                        Dribbling
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="pages/training.html#fitness">
+                                        Fitness
+                                    </a>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li>
+                        <a href="pages/news.html">News</a>
+                    </li>
+
+                    <li>
+                        <a href="pages/teams.html">Teams</a>
+                    </li>
+
+                    <li>
+                        <a href="pages/about.html">About</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <!-- Mobile menu button -->
+            <button
+                class="theme-toggle"
+                type="button"
+                aria-label="Switch to light mode"
+            >
+                <span class="theme-icon">☾</span>
+            </button>
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+
+    </header>
+
+
+    <main>
+
+        <!-- ================================= -->
+        <!-- HERO SECTION -->
+        <!-- ================================= -->
+
+        <section class="hero" id="home">
+
+            <div class="container hero-content">
+
+                <p class="hero-label">
+                    THE HOME OF BASKETBALL
+                </p>
+
+                <h1>
+                    THE GAME<br>
+                    NEVER STOPS.
+                </h1>
+
+                <p class="hero-description">
+                    Train harder. Play smarter.
+                    Stay connected to the game.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="pages/nba.html" class="button button-primary">
+                        Explore NBA
+                    </a>
+
+                    <a href="pages/training.html" class="button button-secondary">
+                        Discover Training
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-scroll">
+                <span>SCROLL TO EXPLORE</span>
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- NBA SCORES SECTION -->
+        <!-- ================================= -->
+
+        <section class="nba-section" id="scores">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="section-label">STAY UPDATED</p>
+
+                        <h2>NBA SCORES</h2>
+                    </div>
+
+                    <a href="pages/nba.html" class="text-link">
+                        View all games →
+                    </a>
+
+                </div>
+
+
+                <!-- Score filters -->
+
+                <div class="score-filters" aria-label="Game date filters">
+
+                    <button type="button" class="filter-button"
+                            aria-pressed="false">
+                        Yesterday
+                    </button>
+
+                    <button type="button" class="filter-button"
+                            aria-pressed="true">
+                        Today
+                    </button>
+
+                    <button type="button" class="filter-button"
+                            aria-pressed="false">
+                        Upcoming
+                    </button>
+
+                </div>
+
+
+                <!-- Games will be loaded from NBA API -->
+
+                <div class="scores-container" id="nba-scores">
+
+                    <article class="game-card">
+
+                        <p class="game-status">GAME DATA</p>
+
+                        <div class="team team-home">
+
+                            <div class="team-info">
+                                <span class="team-name">TEAM A</span>
+                                <span class="team-description">Home</span>
+                            </div>
+
+                            <span class="team-score">--</span>
+
+                        </div>
+
+                        <div class="game-divider">
+                            VS
+                        </div>
+
+                        <div class="team team-away">
+
+                            <div class="team-info">
+                                <span class="team-name">TEAM B</span>
+                                <span class="team-description">Away</span>
+                            </div>
+
+                            <span class="team-score">--</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="game-card">
+
+                        <p class="game-status">GAME DATA</p>
+
+                        <div class="team team-home">
+
+                            <div class="team-info">
+                                <span class="team-name">TEAM C</span>
+                                <span class="team-description">Home</span>
+                            </div>
+
+                            <span class="team-score">--</span>
+
+                        </div>
+
+                        <div class="game-divider">
+                            VS
+                        </div>
+
+                        <div class="team team-away">
+
+                            <div class="team-info">
+                                <span class="team-name">TEAM D</span>
+                                <span class="team-description">Away</span>
+                            </div>
+
+                            <span class="team-score">--</span>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <p class="api-notice">
+                    NBA game information will be provided by an external API.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- TRAINING SECTION -->
+        <!-- ================================= -->
+
+        <section class="training-section" id="training">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="section-label">LEVEL UP YOUR GAME</p>
+
+                        <h2>TRAINING ZONE</h2>
+                    </div>
+
+                    <a href="pages/training.html" class="text-link">
+                        Explore all training →
+                    </a>
+
+                </div>
+
+
+                <div class="training-grid">
+
+                    <!-- Shooting -->
+
+                    <article class="training-card">
+
+                        <div class="training-image">
+                            <img
+                                src="assets/images/Gemini_Generated_Image_v6uqycv6uqycv6uq.jpg"
+                                alt="Basketball player practicing a jump shot"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="training-content">
+
+                            <span class="card-number">01 / SHOOTING</span>
+
+                            <h3>MASTER YOUR SHOT</h3>
+
+                            <p>
+                                Improve your shooting technique,
+                                accuracy and consistency.
+                            </p>
+
+                            <a href="pages/training.html#shooting">
+                                Explore shooting →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Dribbling -->
+
+                    <article class="training-card">
+
+                        <div class="training-image">
+                            <img
+                                src="assets/images/Gemini_Generated_Image_oixndsoixndsoixn.jpg"
+                                alt="Basketball player practicing ball handling"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="training-content">
+
+                            <span class="card-number">02 / DRIBBLING</span>
+
+                            <h3>CONTROL THE GAME</h3>
+
+                            <p>
+                                Develop your handles, speed
+                                and ball control.
+                            </p>
+
+                            <a href="pages/training.html#dribbling">
+                                Explore dribbling →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Fitness -->
+
+                    <article class="training-card">
+
+                        <div class="training-image">
+                            <img
+                                src="assets/images/Gemini_Generated_Image_np0zqrnp0zqrnp0z.jpg"
+                                alt="Basketball player doing athletic training"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="training-content">
+
+                            <span class="card-number">03 / FITNESS</span>
+
+                            <h3>BUILD YOUR STRENGTH</h3>
+
+                            <p>
+                                Work on athleticism, coordination
+                                and overall fitness.
+                            </p>
+
+                            <a href="pages/training.html#fitness">
+                                Explore fitness →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- LATEST NEWS SECTION -->
+        <!-- ================================= -->
+
+        <section class="news-section" id="news">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="section-label">WHAT'S HAPPENING</p>
+
+                        <h2>LATEST NEWS</h2>
+                    </div>
+
+                    <a href="pages/news.html" class="text-link">
+                        All news →
+                    </a>
+
+                </div>
+
+
+                <div class="news-grid">
+
+                    <!-- News article 1 -->
+
+                    <article class="news-card">
+
+                        <a href="pages/news.html" class="news-image">
+
+                            <img
+                                src="assets/images/1024x512-1670500646586.webp"
+                                alt="Basketball game in a professional arena"
+                                loading="lazy"
+                            >
+
+                        </a>
+
+                        <div class="news-content">
+
+                            <span class="news-category">
+                                NBA NEWS
+                            </span>
+
+                            <h3>
+                                <a href="pages/news.html">
+                                    The latest updates from around the NBA
+                                </a>
+                            </h3>
+
+                            <p>
+                                Discover the biggest stories
+                                from the basketball world.
+                            </p>
+
+                            <time datetime="2026-11-11">
+                                November 11, 2026
+                            </time>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- News article 2 -->
+
+                    <article class="news-card">
+
+                        <a href="pages/news.html" class="news-image">
+
+                            <img
+                                src="assets/images/60c85cb4adc75fa9956c7a86fbeeeefc.webp"
+                                alt="Basketball player jumping toward the basket"
+                                loading="lazy"
+                            >
+
+                        </a>
+
+                        <div class="news-content">
+
+                            <span class="news-category">
+                                BASKETBALL
+                            </span>
+
+                            <h3>
+                                <a href="pages/news.html">
+                                    What makes a great basketball player?
+                                </a>
+                            </h3>
+
+                            <p>
+                                Skills, discipline and the mindset
+                                behind the game.
+                            </p>
+
+                            <time datetime="2026-11-11">
+                                November 11, 2026
+                            </time>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- News article 3 -->
+
+                    <article class="news-card">
+
+                        <a href="pages/news.html" class="news-image">
+
+                            <img
+                                src="assets/images/getty-images-71213164.jpg"
+                                alt="Basketball team preparing before a game"
+                                loading="lazy"
+                            >
+
+                        </a>
+
+                        <div class="news-content">
+
+                            <span class="news-category">
+                                TRAINING
+                            </span>
+
+                            <h3>
+                                <a href="pages/news.html">
+                                    How to improve your game every day
+                                </a>
+                            </h3>
+
+                            <p>
+                                Build better habits and become
+                                a smarter player.
+                            </p>
+
+                            <time datetime="2026-11-11">
+                                November 11, 2026
+                            </time>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- TEAMS SECTION -->
+        <!-- ================================= -->
+
+        <section class="teams-section" id="teams">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="section-label">30 TEAMS. ONE LEAGUE.</p>
+
+                        <h2>EXPLORE NBA TEAMS</h2>
+                    </div>
+
+                    <a href="pages/teams.html" class="text-link">
+                        View all teams →
+                    </a>
+
+                </div>
+
+
+                <div class="conferences">
+
+                    <article class="conference-card">
+
+                        <h3>WESTERN CONFERENCE</h3>
+
+                        <p>
+                            Explore the teams competing
+                            in the Western Conference.
+                        </p>
+
+                        <a href="pages/teams.html#western">
+                            Explore Western Teams →
+                        </a>
+
+                    </article>
+
+
+                    <article class="conference-card">
+
+                        <h3>EASTERN CONFERENCE</h3>
+
+                        <p>
+                            Explore the teams competing
+                            in the Eastern Conference.
+                        </p>
+
+                        <a href="pages/teams.html#eastern">
+                            Explore Eastern Teams →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- CALL TO ACTION -->
+        <!-- ================================= -->
+        <section class="cta-section">
+    <img
+        src="assets/images/Download Free Vectors, Images, Photos & Videos _ Vecteezy.jpg"
+        alt="Basketball background"
+        class="cta-background"
+    >
+
+    <div class="cta-content">
+        <p class="section-label">YOUR GAME STARTS HERE</p>
+        <h2>READY TO TAKE YOUR GAME TO THE NEXT LEVEL?</h2>
+        <p>Learn. Train. Improve. Repeat.</p>
+        <a href="pages/training.html" class="cta-button">
+            Start Training
+        </a>
+    </div>
+</section>
+    </main>
+
+
+    <!-- ================================= -->
+    <!-- FOOTER -->
+    <!-- ================================= -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-main">
+
+                <!-- Brand information -->
+
+                <div class="footer-brand">
+
+                    <a href="index.html" class="logo">
+                        COURTSIDE<span>.</span>
+                    </a>
+
+                    <p>
+                        Your home for basketball training,
+                        NBA updates and basketball culture.
+                    </p>
+
+                </div>
+
+
+                <!-- Quick links -->
+
+                <div class="footer-column">
+
+                    <h3>EXPLORE</h3>
+
+                    <ul>
+                        <li><a href="pages/nba.html">NBA</a></li>
+                        <li><a href="pages/training.html">Training</a></li>
+                        <li><a href="pages/news.html">News</a></li>
+                        <li><a href="pages/teams.html">Teams</a></li>
+                    </ul>
+
+                </div>
+
+
+                <!-- Information -->
+
+                <div class="footer-column">
+
+                    <h3>INFORMATION</h3>
+
+                    <ul>
+                        <li><a href="pages/about.html">About us</a></li>
+                        <li><a href="pages/about.html#contact">Contact</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 COURTSIDE. All rights reserved.
+                </p>
+
+                <p>
+                    MADE FOR THE LOVE OF BASKETBALL.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

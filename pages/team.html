@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>COURTSIDE | Team</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="../css/style.css?v=4">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/team.css?v=2">
+</head>
+
+<body data-theme="dark">
+
+    <header class="header">
+         <div class="container header-container">
+
+            <!-- Logo -->
+            <a href="../index.html" class="logo">
+                COURTSIDE<span>.</span>
+            </a>
+
+            <!-- Main navigation -->
+            <nav class="navigation" aria-label="Main navigation">
+
+                <ul class="nav-list">
+
+                    <li>
+                        <a href="../index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <details class="nav-dropdown">
+                            <summary>NBA</summary>
+
+                            <ul>
+                                <li>
+                                    <a href="nba.html">
+                                        NBA Overview
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="nba.html#scores">
+                                        Scores
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="nba.html#standings">
+                                        Standings
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="nba.html#schedule">
+                                        Schedule
+                                    </a>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li>
+                        <details class="nav-dropdown">
+                            <summary>Training</summary>
+
+                            <ul>
+                                <li>
+                                    <a href="training.html">
+                                        All Training
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="training.html#shooting">
+                                        Shooting
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="training.html#dribbling">
+                                        Dribbling
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="training.html#fitness">
+                                        Fitness
+                                    </a>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li>
+                        <a href="news.html">News</a>
+                    </li>
+
+                    <li>
+                        <a href="teams.html">Teams</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- Mobile menu button -->
+            <button
+                class="theme-toggle"
+                type="button"
+                aria-label="Switch to light mode"
+            >
+                <span class="theme-icon">☾</span>
+            </button>
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </header>
+
+    
+<main class="team-page">
+    <a href="teams.html" class="back-link">
+        <span>←</span> Back to Teams
+    </a>
+
+    <section class="team-hero" id="team-info">
+        <div class="team-loading">Loading team...</div>
+    </section>
+
+    <section class="team-details">
+        <div class="section-heading">
+            <p class="section-label">TEAM PROFILE</p>
+            <h2>Team Information</h2>
+        </div>
+
+        <div class="details-grid">
+            <article class="detail-card">
+                <span class="detail-label">CITY</span>
+                <h3 id="team-city">—</h3>
+            </article>
+
+            <article class="detail-card">
+                <span class="detail-label">CONFERENCE</span>
+                <h3 id="team-conference">—</h3>
+            </article>
+
+            <article class="detail-card">
+                <span class="detail-label">DIVISION</span>
+                <h3 id="team-division">—</h3>
+            </article>
+
+            <article class="detail-card">
+                <span class="detail-label">ABBREVIATION</span>
+                <h3 id="team-abbreviation">—</h3>
+            </article>
+        </div>
+    </section>
+    <section class="roster-section">
+    <div class="section-heading">
+        <p class="section-label">CURRENT ROSTER</p>
+        <h2>Team Roster</h2>
+    </div>
+
+    <div class="roster-grid" id="roster-grid">
+        <p>Loading roster...</p>
+    </div>
+</section>
+</main>
+ <!-- ================================= -->
+    <!-- FOOTER -->
+    <!-- ================================= -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-main">
+
+                <!-- Brand information -->
+
+                <div class="footer-brand">
+
+                    <a href="/index.html" class="logo">
+                        COURTSIDE<span>.</span>
+                    </a>
+
+                    <p>
+                        Your home for basketball training,
+                        NBA updates and basketball culture.
+                    </p>
+
+                </div>
+
+
+                <!-- Quick links -->
+
+                <div class="footer-column">
+
+                    <h3>EXPLORE</h3>
+
+                    <ul>
+                        <li><a href="nba.html">Nba</a></li>
+                        <li><a href="training.html">Training</a></li>
+                        <li><a href="teams.html">Teams</a></li>
+                        <li><a href="news.html">News</a></li>
+
+                        
+                    </ul>
+
+                </div>
+
+
+                <!-- Information -->
+
+                <div class="footer-column">
+
+                    <h3>INFORMATION</h3>
+
+                    <ul>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="about.html#contact">Contact</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 COURTSIDE. All rights reserved.
+                </p>
+
+                <p>
+                    MADE FOR THE LOVE OF BASKETBALL.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+<script src="../js/main.js?v=3"></script>
+<script src="../js/team.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,793 @@
+
+/* =========================================
+   1. CSS VARIABLES — DESIGN SYSTEM
+========================================= */
+
+/* DARK THEME */
+
+:root,
+[data-theme="dark"] {
+    --bg-primary: #101010;
+    --bg-secondary: #191919;
+    --bg-tertiary: #222222;
+
+    --text-primary: #F5F5F5;
+    --text-secondary: #A0A0A0;
+
+    --accent: #FF6B25;
+    --accent-hover: #E85A18;
+
+    --border: #292929;
+    --border-color: var(--border);
+
+    --card-bg: #191919;
+    --header-bg: rgba(16, 16, 16, 0.95);
+    --teams-bg: var(--bg-primary);
+    --teams-card: var(--bg-secondary);
+    --teams-card-hover: var(--bg-tertiary);
+    --teams-text: var(--text-primary);
+    --teams-muted: var(--text-secondary);
+    --teams-border: var(--border);
+    --teams-accent: var(--accent);
+    --teams-accent-hover: var(--accent-hover);
+    --nba-hero-bg: linear-gradient(90deg, #0a0a0a, #191919);
+    --nba-hero-text: var(--text-primary);
+    color-scheme: dark;
+}
+
+
+/* LIGHT THEME */
+
+[data-theme="light"] {
+    --bg-primary: #F4F4F4;
+    --bg-secondary: #FFFFFF;
+    --bg-tertiary: #EAEAEA;
+
+    --text-primary: #171717;
+    --text-secondary: #666666;
+
+    --accent: #FF6B25;
+    --accent-hover: #E85A18;
+
+    --border: #DDDDDD;
+    --border-color: var(--border);
+
+    --card-bg: #FFFFFF;
+    --header-bg: rgba(244, 244, 244, 0.95);
+    --teams-bg: var(--bg-primary);
+    --teams-card: var(--bg-secondary);
+    --teams-card-hover: var(--bg-tertiary);
+    --teams-text: var(--text-primary);
+    --teams-muted: var(--text-secondary);
+    --teams-border: var(--border);
+    --teams-accent: var(--accent);
+    --teams-accent-hover: var(--accent-hover);
+    --nba-hero-bg: linear-gradient(90deg, #FFFFFF, #EAEAEA);
+    --nba-hero-text: var(--text-primary);
+    color-scheme: light;
+}
+
+
+/* =========================================
+   2. RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-primary);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+
+    line-height: 1.6;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================
+   3. TYPOGRAPHY
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+.logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: clamp(3rem, 8vw, 7rem);
+}
+
+h2 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+p {
+    color: var(--text-secondary);
+}
+
+
+/* =========================================
+   4. CONTAINER
+========================================= */
+
+.container {
+    width: min(100% - 48px, 1280px);
+    margin-inline: auto;
+}
+
+
+/* =========================================
+   5. HEADER
+========================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    background-color: var(--header-bg);
+
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(12px);
+}
+
+.header-container {
+    min-height: 84px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================
+   SPACING IMPROVEMENTS
+========================================= */
+
+/* Загальні відступи секцій */
+section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* Відступи між заголовком і контентом */
+.section-heading {
+    margin-bottom: 50px;
+}
+
+/* Навігація */
+.nav-list {
+    gap: 38px;
+}
+
+/* Логотип і навігація */
+.header-container {
+    gap: 40px;
+}
+
+/* Кнопки */
+.hero-buttons {
+    display: flex;
+    gap: 18px;
+    margin-top: 35px;
+}
+
+/* Footer */
+.footer {
+    padding-top: 80px;
+}
+
+.footer-main {
+    padding-bottom: 60px;
+}
+
+/* Текст */
+p {
+    line-height: 1.8;
+}
+
+/* Мобільні пристрої */
+@media (max-width: 700px) {
+    section {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .nav-list {
+        gap: 18px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* LOGO */
+
+.logo {
+    font-size: 2rem;
+    letter-spacing: 1px;
+
+    color: var(--text-primary);
+
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+
+/* NAVIGATION */
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-list a,
+.nav-dropdown summary {
+    color: var(--text-secondary);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.nav-list a:hover,
+.nav-dropdown summary:hover {
+    color: var(--accent);
+}
+
+
+/* DROPDOWN */
+
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown summary {
+    list-style: none;
+}
+
+.nav-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.nav-dropdown summary::after {
+    content: "⌄";
+    margin-left: 6px;
+}
+
+.nav-dropdown ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 180px;
+
+    padding: 12px;
+
+    margin-top: 15px;
+
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.nav-dropdown:not([open]) ul {
+    display: none;
+}
+
+.nav-dropdown ul li a {
+    display: block;
+    padding: 10px;
+}
+
+
+/* =========================================
+   6. BUTTONS
+========================================= */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 0 26px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    border-radius: 4px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* PRIMARY BUTTON */
+
+.button-primary {
+    background-color: var(--accent);
+    color: #FFFFFF;
+}
+
+.button-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+
+/* SECONDARY BUTTON */
+
+.button-secondary {
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
+}
+
+.button-secondary:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+
+/* TEXT LINK */
+
+.text-link {
+    color: var(--accent);
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    transition: opacity 0.2s ease;
+}
+
+.text-link:hover {
+    opacity: 0.75;
+}
+
+
+/* =========================================
+   7. SECTION HEADINGS
+========================================= */
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    margin-bottom: 40px;
+}
+
+.section-label {
+    color: var(--accent);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   8. THEME TOGGLE
+========================================= */
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+
+    font-size: 1.2rem;
+    line-height: 1;
+
+    transition: 0.2s ease;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.theme-icon {
+    display: block;
+}
+
+input,
+select,
+textarea {
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    border-color: var(--border);
+}
+
+table,
+th,
+td {
+    border-color: var(--border);
+}
+
+table {
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+}
+
+dialog,
+[role="dialog"],
+.modal {
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    border-color: var(--border);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-tertiary);
+    border: 2px solid var(--bg-primary);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+* {
+    scrollbar-color: var(--bg-tertiary) var(--bg-primary);
+}
+
+
+/* =========================================
+   9. MOBILE MENU BUTTON
+========================================= */
+
+.menu-toggle {
+    display: none;
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 8px;
+
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: var(--text-primary);
+}
+
+
+/* =========================================
+   10. FOOTER
+========================================= */
+
+.footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+
+    padding-top: 70px;
+}
+
+.footer-main {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 60px;
+
+    padding-bottom: 50px;
+}
+
+.footer-brand p {
+    max-width: 350px;
+    margin-top: 15px;
+}
+
+.footer-column h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-column a {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 24px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.footer-bottom p {
+    font-size: 0.75rem;
+}
+
+
+/* =========================================
+   11. RESPONSIVE — GLOBAL
+========================================= */
+
+@media (max-width: 900px) {
+
+    .nav-list {
+        gap: 16px;
+    }
+
+    .footer-main {
+        gap: 30px;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .container {
+        width: min(100% - 32px, 1280px);
+    }
+
+    .header-container {
+        min-height: 70px;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        align-items: start;
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 420px) {
+
+    .logo {
+        font-size: 1.7rem;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+}
+
+/* ================================= */
+/* FOOTER */
+/* ================================= */
+
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    padding: 70px 0 25px;
+}
+
+/* Main footer layout */
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 55px;
+}
+
+/* Brand */
+
+.footer-brand .logo {
+    display: inline-block;
+    color: var(--text-primary);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.footer-brand .logo span {
+    color: #ff6b00;
+}
+
+.footer-brand p {
+    max-width: 320px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Footer columns */
+
+.footer-column h3 {
+    color: var(--text-primary);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 14px;
+}
+
+.footer-column a {
+    color: var(--text-secondary);
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #ff6b00;
+}
+
+/* Bottom section */
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 25px;
+}
+
+.footer-bottom p {
+    color: var(--text-secondary);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+

@@ -1,0 +1,127 @@
+@media (max-width: 768px) {
+    .scores-container {
+        grid-template-columns: 1fr;
+    }
+
+    .nba-section .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-card {
+        padding: 20px;
+    }
+
+    .team-name {
+        font-size: 16px;
+    }
+
+    .team-score {
+        font-size: 29px;
+    }
+}
+@media (max-width: 900px) {
+    .training-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .training-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .training-section .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .training-section h2 {
+        font-size: 42px;
+    }
+
+    .training-image {
+        height: 220px;
+    }
+}
+/* NEWS RESPONSIVE */
+
+@media (max-width: 900px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-section .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .news-section h2 {
+        font-size: 42px;
+    }
+
+    .news-image {
+        height: 220px;
+    }
+}
+/* TEAMS RESPONSIVE */
+
+@media (max-width: 768px) {
+    .conferences {
+        grid-template-columns: 1fr;
+    }
+
+    .teams-section .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .conference-card {
+        padding: 30px;
+        min-height: 250px;
+    }
+
+    .conference-card h3 {
+        font-size: 32px;
+    }
+
+    .teams-section h2 {
+        font-size: 42px;
+    }
+}
+/* CTA RESPONSIVE */
+
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 90px 0;
+        background-position: 60% center;
+    }
+
+    .cta-content h2 {
+        font-size: 55px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-section {
+        padding: 70px 0;
+    }
+
+    .cta-content h2 {
+        font-size: 42px;
+    }
+
+    .cta-content > p:not(.section-label) {
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,202 @@
+
+/* ==============================
+   COURTSIDE — TEAMS PAGE
+============================== */
+
+:root {
+    --teams-bg: var(--bg-primary);
+    --teams-card: var(--bg-secondary);
+    --teams-card-hover: var(--bg-tertiary);
+    --teams-text: var(--text-primary);
+    --teams-muted: var(--text-secondary);
+    --teams-border: var(--border);
+    --teams-accent: var(--accent);
+    --teams-accent-hover: var(--accent-hover);
+}
+
+/* MAIN SECTION */
+
+.teams-section {
+    width: min(1200px, 90%);
+    margin: 100px auto;
+    color: var(--teams-text);
+}
+
+/* HEADER */
+
+.teams-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-label {
+    color: var(--teams-accent);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.teams-header h1 {
+    color: var(--teams-text);
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.teams-header > p:last-child {
+    color: var(--teams-muted);
+    font-size: 16px;
+}
+
+/* FILTERS */
+
+.teams-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 45px;
+}
+
+.team-filter {
+    padding: 12px 24px;
+    border: 1px solid var(--teams-border);
+    border-radius: 30px;
+    background: transparent;
+    color: var(--teams-text);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.team-filter:hover {
+    border-color: var(--teams-accent);
+    color: var(--teams-accent);
+}
+
+.team-filter.active {
+    background: var(--teams-accent);
+    border-color: var(--teams-accent);
+    color: #ffffff;
+}
+
+.team-filter.active:hover {
+    background: var(--teams-accent-hover);
+}
+
+/* TEAMS GRID */
+
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* TEAM CARD */
+
+.team-card {
+    position: relative;
+    padding: 30px 20px;
+    min-height: 260px;
+    border: 1px solid var(--teams-border);
+    border-radius: 16px;
+    background: var(--teams-card);
+    cursor: pointer;
+    color: var(--teams-text);
+    text-align: center;
+    transition: 0.3s ease;
+    overflow: hidden;
+}
+
+.team-card:hover {
+    transform: translateY(-7px);
+    background: var(--teams-card-hover);
+    border-color: var(--teams-accent);
+}
+
+/* ORANGE TOP LINE */
+
+.team-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--teams-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* LOGO */
+
+.team-logo {
+    width: 105px;
+    height: 105px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* TEAM INFORMATION */
+
+.team-abbreviation {
+    display: inline-block;
+    color: var(--teams-accent);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.team-card h3 {
+    color: var(--teams-text);
+    font-size: 19px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.team-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: var(--teams-muted);
+    font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .teams-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .teams-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .teams-section {
+        margin: 65px auto;
+    }
+
+    .team-filter {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+}
